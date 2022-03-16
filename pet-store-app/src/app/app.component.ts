@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbNavItem } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  active = 1;
   title = 'pet-store-app';
 }
