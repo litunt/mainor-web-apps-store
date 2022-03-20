@@ -3,28 +3,35 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ProductCardComponent } from './product-card/product-card.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { ProductCardComponent } from './components/products/product-card/product-card.component';
+import { CategoryCardComponent } from './components/categories/category-card/category-card.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CategoryCardComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    NgbNavModule,
-    MatToolbarModule,
-    MatIconModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
