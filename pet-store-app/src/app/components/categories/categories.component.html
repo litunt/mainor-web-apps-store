@@ -1,23 +1,8 @@
 <br>
 <div style="padding-left: 15%; padding-right: 10%">
   <mat-grid-list cols="3">
-    <mat-grid-tile style="align-content: center">
-      <app-category-card></app-category-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-category-card></app-category-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-category-card></app-category-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-category-card></app-category-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-category-card></app-category-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-category-card></app-category-card>
+    <mat-grid-tile *ngFor="let category of categories">
+      <app-category-card [category]="category"></app-category-card>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
