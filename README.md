@@ -1,7 +1,7 @@
 # mainor-web-apps-store
 
-`npm install -g @angular/cli@12.2.0`
-# sudo might be needed for mac users
+`npm install -g @angular/cli@12.2.0` 
+sudo might be needed for mac users
 
 `ng new pet-store-app`
 
