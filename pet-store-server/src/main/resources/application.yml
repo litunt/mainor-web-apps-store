@@ -1,0 +1,17 @@
+host.base.url: http://localhost:3030
+
+server:
+  port: 3030
+
+spring:
+  application:
+    name: PetStore
+  datasource:
+    url: jdbc:h2:mem:petstoredb
+    username: petstore
+    password: 123456
+    driver-class-name: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  liquibase:
+    change-log: classpath:db/changelog/changelog.xml
