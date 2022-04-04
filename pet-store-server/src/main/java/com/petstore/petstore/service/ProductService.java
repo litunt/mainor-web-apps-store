@@ -15,12 +15,8 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<ProductDTO> getProducts() {
-        return productRepository.getProducts();
-    }
-
     public List<ProductDTO> getProductsByCategory(String category) {
-        List<ProductDTO> allProducts = productRepository.getProducts();
+        List<ProductDTO> allProducts = new ArrayList<>();
         List<ProductDTO> result = new ArrayList<>();
         for (ProductDTO p : allProducts) {
             if (p.getCategory().name().equalsIgnoreCase(category)) {
@@ -28,8 +24,9 @@ public class ProductService {
             }
         }
 
-        return productRepository.getProducts().stream()
-                .filter(p -> p.getCategory().name().equalsIgnoreCase(category))
-                .collect(Collectors.toList());
+//        return productRepository.getProducts().stream()
+//                .filter(p -> p.getCategory().name().equalsIgnoreCase(category))
+//                .collect(Collectors.toList());
+        return null;
     }
 }
