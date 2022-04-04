@@ -1,0 +1,8 @@
+<br>
+<div style="padding-left: 15%; padding-right: 10%">
+  <mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let product of products">
+      <app-product-card [product]="product"></app-product-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

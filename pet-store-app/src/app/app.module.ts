@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import {HttpClientModule} from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -19,18 +20,22 @@ import { ProductCardComponent } from './components/products/product-card/product
 import { CategoryCardComponent } from './components/categories/category-card/category-card.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
+import { ProductsComponent } from './components/products/products.component';
+import {ProductService} from "./service/product.service";
 @NgModule({
   declarations: [
     AppComponent,
     ProductCardComponent,
     CategoryCardComponent,
     CategoriesComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSliderModule,
     MatButtonModule,
     MatToolbarModule,
@@ -46,7 +51,9 @@ import { ContactPageComponent } from './components/contact-page/contact-page.com
     RouterModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

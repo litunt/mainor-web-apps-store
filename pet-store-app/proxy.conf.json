@@ -1,0 +1,7 @@
+{
+  "/petstore-api/*": {
+    "target": "localhost:3030",
+    "secure": false,
+    "pathRewrite": {"^/petstore-api" : ""}
+  }
+}
