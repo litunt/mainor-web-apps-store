@@ -6,15 +6,17 @@ import {Observable} from "rxjs";
 @Injectable()
 export class ProductService {
 
-  private BASE_API_URL = 'http://localhost:3030';
+  private BASE_URL = 'http://localhost:3030/products';
 
   constructor(private http: HttpClient) {
   }
 
-  public getProducts(category: string, petType: string): Observable<any> {
+  public getProducts(category: string, petType?: string): Observable<any> {
     let params: HttpParams = new HttpParams();
     params = params.append("category", category);
-    params = params.append("petType", petType);
-    return this.http.get(`${this.BASE_API_URL}/products`, {params: params});
+    if (petType) {
+      params = params.append("petType", petType);
+    }
+    return this.http.get(`${this.BASE_URL}`, {params: params});
   }
 }

@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import {HttpClientModule} from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +23,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { ProductsComponent } from './components/products/products.component';
 import {ProductService} from "./service/product.service";
+import {CartService} from "./service/cart.service";
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import {ProductService} from "./service/product.service";
     CategoryCardComponent,
     CategoriesComponent,
     ContactPageComponent,
-    ProductsComponent
+    ProductsComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -46,13 +50,15 @@ import {ProductService} from "./service/product.service";
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule
   ],
   exports: [
     RouterModule,
     MatTableModule
   ],
   providers: [
-    ProductService
+    ProductService,
+    CartService
   ],
   bootstrap: [AppComponent]
 })
