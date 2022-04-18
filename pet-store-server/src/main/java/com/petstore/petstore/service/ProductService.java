@@ -36,4 +36,8 @@ public class ProductService {
                 PetType.valueOf(petType));
         return productMapper.entitiesToDtos(allProducts);
     }
+
+    public void decreaseQuantity(Long productId, int amount) {
+        productRepository.updateProductAmount(amount, productId);
+    }
 }

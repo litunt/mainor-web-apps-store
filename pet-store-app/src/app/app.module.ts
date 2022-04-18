@@ -25,6 +25,8 @@ import { ProductsComponent } from './components/products/products.component';
 import {ProductService} from "./service/product.service";
 import {CartService} from "./service/cart.service";
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import {OrderService} from "./service/order.service";
+import { OrderPageComponent } from './components/order-page/order-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     CategoriesComponent,
     ContactPageComponent,
     ProductsComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    OrderPageComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
   ],
   providers: [
     ProductService,
-    CartService
+    CartService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

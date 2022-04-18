@@ -28,11 +28,10 @@ export class CartService {
   }
 
   public updateProductAmount(productId: number, amount: number) {
-    const cartItemsAsStr = localStorage.getItem(this.LOCALSTORAGE_CART_KEY);
-    if (cartItemsAsStr === null) {
+    let cartItems: CartItem[] = this.getCartFromStorage();
+    if (cartItems.length < 1) {
       return;
     }
-    let cartItems = <CartItem[]> JSON.parse(cartItemsAsStr);
     cartItems.forEach(item => {
       if (item.product.id === productId) {
         item.amount = amount;
